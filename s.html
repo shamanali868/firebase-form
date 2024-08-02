@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIREBASE FORM2</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: aqua;
+            color: brown;
+            columns: left;
+            background-image: url(./download\ \(1\).jfif);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h1>Signup Form</h1>
+            <form onsubmit="signup(event)">
+                <label for="email">Email:</label>
+                <input type="text" placeholder="Enter your email" id="email"><br>
+                <label for="password">Password:</label>
+                <input type="password" placeholder="Enter your password" id="password"><br>
+                <button type="submit">Submit</button><br>
+            </form>
+        </div>
+
+        <div class="form-2">
+            <h1>Login</h1>
+k            <form onsubmit="login(event)">
+                <label for="login_email">Email:</label>
+                <input type="text" placeholder="Enter your email" id="login_email"><br>
+                <label for="login_password">Password:</label>
+                <input type="password" placeholder="Enter your password" id="login_password"><br>
+                <button type="submit">Login</button>
+                <button type="button" onclick="logout()">Logout</button>
+            </form>
+        </div>
+
+        <div class="wellcome-box">
+            <h1>Welcome</h1>
+        </div>
+
+        <div class="center">
+            <h2>Your Account Details</h2>
+            <img src="./IMG-20240420-WA0001" alt="">
+            <input type="file" accept="image/*" onchange="uploadimg(event)">
+            <div class="userdetails">
+                <!-- User details will appear here -->
+            </div>
+        </div>
+
+        <div id="model">
+            <h1>User Details</h1>
+            <form id="editsprofile" onsubmit="userupdate(event)">
+                <label for="name">Name:</label>
+                <input type="text" name="name" placeholder="Name"><br>
+                <label for="profileEmail">Email:</label>
+                <input type="email" name="profileEmail" placeholder="Email"><br>
+                <label for="phone">Phone:</label>
+                <input type="number" name="phone" placeholder="Phone"><br>
+                <label for="specialty">Specialty:</label>
+                <input type="text" name="specialty" placeholder="Specialty"><br>
+                <label for="portfolioUrl">Portfolio URL:</label>
+                <input type="text" name="portfolioUrl" placeholder="Portfolio URL"><br>
+                <label for="experience">Experience:</label>
+                <input type="text" name="experience" placeholder="Experience"><br>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyC5LpeK4hAejBmLfa0dBC7LzwC5hrg-JnY",
+            authDomain: "forms-project-43b52.firebaseapp.com",
+            projectId: "forms-project-43b52",
+            storageBucket: "forms-project-43b52.appspot.com",
+            messagingSenderId: "91954276326",
+            appId: "1:91954276326:web:2241c10ec54a735b6cd827",
+            measurementId: "G-1B6N66VV5L"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="./h.js"></script>
+    <script src="./store.js"></script>
+</body>
+</html>
